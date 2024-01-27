@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+body {
+    background-color: #a3acbe;  /** 後で消す **/
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-main {
+    display: flex;
+    align-items: center; /* 子要素を垂直方向に中央揃え */
+}
+
+.nav-logo {
+    background-color: rgb(74, 180, 194);
+    display: flex;
+    transition: all 0.3s;
+}
+
+.nav-logo img {
+    width: 250px
+}
+
+.nav-logo:hover {
+    opacity: 0.7;
+}
+
+.nav-text a {
+    color: #ffffff;
+}
+
+.nav-text a:hover {
+    border-bottom: 2px solid #ffffff;
+}
