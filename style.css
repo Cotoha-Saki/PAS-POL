@@ -1,7 +1,8 @@
 @charset "utf-8";
 
+/* スマホ用 */
 body {
-    background-color: #a3acbe;  /** 後で消す **/
+    background-color: bisque;
 }
 
 a {
@@ -12,29 +13,114 @@ li {
     list-style: none;
 }
 
-.nav-main {
-    display: flex;
-    align-items: center; /* 子要素を垂直方向に中央揃え */
+/* タブレット用 */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: aqua;
+    }
 }
 
-.nav-logo {
-    background-color: rgb(74, 180, 194);
-    display: flex;
-    transition: all 0.3s;
-}
+/* PC用 */
+@media screen and (min-width: 1024px) {
 
-.nav-logo img {
-    width: 250px
-}
+    /* スマホ、タブレット用要素非表示 */
+    .mo-menu-toggle {
+        display: none;
+    }
 
-.nav-logo:hover {
-    opacity: 0.7;
-}
+    body {
+        background-color: #ffffff;
+    }
 
-.nav-text a {
-    color: #ffffff;
-}
+    a {
+        text-decoration: none;
+    }
 
-.nav-text a:hover {
-    border-bottom: 2px solid #ffffff;
+    li {
+        list-style: none;
+    }
+
+    .nav-main {
+        position: absolute;
+        /* nav-main を絶対位置に配置 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .nav-logo {
+        margin-right: auto;
+        /* 左側に配置 */
+        transition: all 0.3s;
+        margin-top: 50px;
+        margin-left: 180px;
+    }
+
+    .menu {
+        margin-left: auto;
+        /* 右側に配置 */
+        margin-top: 50px;
+        margin-right: 180px;
+        /* 右側の余白を追加 */
+    }
+
+    .nav-logo img {
+        width: 250px;
+    }
+
+    .nav-logo:hover {
+        opacity: 0.7;
+    }
+
+    .nav-text {
+        display: inline-block;
+        padding: 0 20px;
+        font-size: 15px;
+    }
+
+    .nav-text a {
+        color: #ffffff;
+        border-bottom: 2px solid transparent;
+        /* 透明な下線を初期設定 */
+        transition: border-bottom 0.3s ease;
+        /* 下線の変化をゆっくりさせる */
+    }
+
+    .nav-text a:hover {
+        border-bottom: 2px solid #ffffff;
+    }
+
+    .main-bg {
+        position: relative;
+        width: 100%;
+    }
+
+    .travel-main {
+        margin-top: 150px;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .travel-sub {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .travel-siteLogo {}
+
+    .traveltext,
+    .travel-siteLogo {
+        line-height: 1.8;
+        /* 行の高さを調整 */
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
 }
